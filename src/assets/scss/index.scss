@@ -1,3 +1,61 @@
 @import "reset";
 @import "fonts";
 @import "vue-svgicon";
+@import "ui";
+@import "transitions";
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-family: "PT Sans";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 21px;
+	color: $black;
+	background: $bg-light;
+	cursor: default;
+}
+
+strong {
+	font-weight: bold;
+}
+
+a {
+	color: inherit;
+
+	&:not(:hover) {
+		text-decoration: none;
+	}
+}
+
+label {
+	user-select: none;
+}
+
+.container {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -12px;
+}
+
+.column {
+	position: relative;
+	width: 100%;
+	padding: 0 12px;
+	flex: 0 0 50%;
+	max-width: 50%;
+	box-sizing: border-box;
+}
+
+.text-gray {
+	color: #808080;
+}

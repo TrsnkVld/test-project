@@ -1,0 +1,170 @@
+.v {
+	&-button {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		background: $gray;
+		border: none;
+		font-size: 13px;
+		line-height: 20px;
+		padding: 9px 13px 9px 13px;
+		flex-shrink: 0;
+		user-select: none;
+
+		&__icon {
+			margin-left: 10px;
+			height: 15px;
+		}
+	}
+
+	&-checkbox {
+		user-select: none;
+		line-height: 0;
+
+		label {
+			display: inline-flex;
+			align-items: center;
+			cursor: pointer;
+		}
+
+		&__mark {
+			position: relative;
+			display: inline-block;
+			margin-right: 10px;
+
+			&:before {
+				content: "";
+				position: relative;
+				display: inline-block;
+				border: 1px solid #c4c4c4;
+				width: 14px;
+				height: 14px;
+			}
+		}
+
+		&__input {
+			display: none;
+
+			&:checked ~ .v-checkbox__mark {
+				&:before {
+					background: $yellow;
+				}
+
+				&:after {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 1px;
+					left: 5px;
+					width: 5px;
+					height: 9px;
+					border: solid #000000;
+					border-width: 0 1px 1px 0;
+					transform: rotate(45deg);
+				}
+			}
+		}
+
+		&__text {
+			font-size: 13px;
+			line-height: 13px;
+			transition: color $transition;
+		}
+
+		&:hover {
+			.v-checkbox__text {
+				color: $red;
+			}
+		}
+	}
+
+	&-input {
+		border: 1px solid #c4c4c4;
+		width: 100%;
+		font-size: inherit;
+		line-height: inherit;
+		padding: 8px 15px 7px;
+		background: transparent;
+		user-select: none;
+
+		&::placeholder {
+			color: #9b9b9b;
+		}
+
+		&:focus-visible {
+			outline: none;
+		}
+	}
+
+	&-search {
+		position: relative;
+		width: 100%;
+
+		&__icon {
+			width: 15px;
+			position: absolute;
+			top: 50%;
+			left: 15px;
+			transform: translateY(-50%);
+			pointer-events: none;
+		}
+
+		&__input {
+			@extend .v-input;
+			padding-left: 45px;
+		}
+
+		&::-webkit-search-cancel-button {
+			display: none;
+		}
+	}
+
+	&-select {
+		flex-shrink: 0;
+		width: 190px;
+		position: relative;
+
+		&__btn {
+			@extend .v-input;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			cursor: pointer;
+
+			& > div {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+			svg {
+				width: 8px;
+				margin-left: 15px;
+				transition: transform $transition;
+			}
+
+			width: auto;
+		}
+
+		&__items {
+			width: 100%;
+			box-sizing: border-box;
+			overflow: hidden;
+			background: $white;
+			box-shadow: 0px 20px 25px -5px rgba(26, 32, 44, 0.1),
+				0px 10px 10px -5px rgba(26, 32, 44, 0.04);
+			padding: 20px;
+			margin-top: 6px;
+			position: absolute;
+			z-index: 10;
+			top: 100%;
+			left: 0;
+		}
+
+		.v-checkbox {
+			&:not(:last-child) {
+				margin-bottom: 17px;
+			}
+		}
+	}
+}
