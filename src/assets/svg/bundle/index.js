@@ -1,8 +1,10 @@
 /* eslint-disable */
 require('./arrow')
 require('./bin')
+require('./car')
 require('./close')
 require('./magnifier')
 require('./map-marker')
 require('./paper-plane')
 require('./pdf')
+require('./plan')

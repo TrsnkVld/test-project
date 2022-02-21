@@ -4,8 +4,8 @@
 		@mouseover="isDesctiptionShowing = true"
 		@mouseleave="isDesctiptionShowing = false"
 	>
-		<div class="apartment-card-hint__icon">
-			<svgicon name="bin" />
+		<div class="apartment-card-hint__icon" v-if="hint.text">
+			<svgicon :name="hint.text == 'Квартира' ? 'plan' : 'car'" />
 		</div>
 		<div class="apartment-card-hint__text">
 			{{ hint.text }}
